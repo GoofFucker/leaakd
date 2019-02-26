@@ -26,6 +26,7 @@ client.on('message', message => {
         var args = message.content.split(" ");
         var server = message.guild;
         var name = message.author.username;
+        message.delete();
             if (args[1] === '(All)') {
                 message.delete();
                 message.author.send(message.author + " Bien tenté, mais je ne suis pas stupide ^^.") }
