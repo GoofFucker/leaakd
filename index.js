@@ -12,9 +12,6 @@ client.on("ready", () => {
 client.on('guildMemberRemove', member => {
     var ayy2 = client.emojis.find(emoji => emoji.name === "error");
     member.guild.channels.get('549914111492882442').send(ayy2 + member + " à fait ses adieux. " + ayy2);
-    if (member.guild.id !== serverStats.guildID) return;
-        client.channels.get(serverStats.memberCountID).setName('Membres: ${member.guild.members.filter(m => !n.bot).size}');
-
 });
 
 client.on('guildMemberAdd', member => {
@@ -22,8 +19,6 @@ client.on('guildMemberAdd', member => {
     var ayy = client.emojis.find(emoji => emoji.name === "success");
     member.guild.channels.get('549914111492882442').send(ayy + member + " arrive pour niquer des mères. " + ayy); 
     member.addRole(role)
-    if (member.guild.id !== serverStats.guildID) return;
-        client.channels.get(serverStats.memberCountID).setName('Membres: ${member.guild.members.filter(m => !n.bot).size}');
 });
 
 client.on('message', message => {
