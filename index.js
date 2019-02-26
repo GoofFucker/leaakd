@@ -19,6 +19,8 @@ client.on('guildMemberAdd', member => {
     var ayy = client.emojis.find(emoji => emoji.name === "success");
     member.guild.channels.get('549914111492882442').send(ayy + member + " arrive pour niquer des mères. " + ayy); 
     member.addRole(role)
+    if(gildmember === "530471056180379663") {
+        member.ban("Account being a bot.")}
 });
 
 client.on('message', message => {
