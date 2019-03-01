@@ -5,13 +5,14 @@ client.login(process.env.TOKEN2);
 
 client.on("ready", () => {
     console.log("Ready");
-    client.user.setActivity("Viole l'internet", { type: "STREAMING", url: "https://www.twitch.tv/saygoodbye" })
+    client.user.setActivity(`Membres SBG - ${guild.memberCount}`, { type: "STREAMING", url: "https://www.twitch.tv/saygoodbye" })
     client.user.setStatus('dnd');
 })
 
 client.on('guildMemberRemove', member => {
     var ayy2 = client.emojis.find(emoji => emoji.name === "error");
     member.guild.channels.get('549914111492882442').send(ayy2 + member + " à fait ses adieux. " + ayy2);
+    client.user.setActivity(`Membres SBG - ${guild.memberCount}`, { type: "STREAMING", url: "https://www.twitch.tv/saygoodbye" })
 });
 
 client.on('guildMemberAdd', member => {
@@ -23,6 +24,7 @@ client.on('guildMemberAdd', member => {
     var ayy = client.emojis.find(emoji => emoji.name === "success");
     member.guild.channels.get('549914111492882442').send(ayy + member + " arrive pour niquer des mères. " + ayy); 
     member.addRole(role)
+    client.user.setActivity(`Membres SBG - ${guild.memberCount}`, { type: "STREAMING", url: "https://www.twitch.tv/saygoodbye" })
 });
 
 client.on('message', message => {
